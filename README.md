@@ -2,7 +2,7 @@
 This is a project from my course with slight improvements and twigs , hope you will like it 
 # Bella Vista - A Modern & Mesmerizing Restaurant Website 🍝✨
 
-![Bella Vista ](.Assets/HeroPage.png) Welcome to the repository for Bella Vista, a fully responsive, single-page concept website for an upscale Italian restaurant. This project was built from the ground up with a focus on modern UI/UX principles, elegant animations, and a cohesive, mesmerizing theme.
+![Bella Vista ](Assets/HeroPage.png) Welcome to the repository for Bella Vista, a fully responsive, single-page concept website for an upscale Italian restaurant. This project was built from the ground up with a focus on modern UI/UX principles, elegant animations, and a cohesive, mesmerizing theme.
 
 **You can visit the Website:** [Live Demo](https://soumya-bella-vista.netlify.app/) ---
 
@@ -81,10 +81,10 @@ This is a static front-end project. No complex build steps are required.
 ## 📸 Screenshots
 
 **Desktop View**
-![Desktop View](./Assets/Desktop-View.gif)
+![Desktop View](/Assets/Desktop-View.gif)
 
 **Mobile View**
-![Mobile view](./Assets/Mobile-View.gif)
+![Mobile view](/Assets/Mobile-View.gif)
 
 ---
 
