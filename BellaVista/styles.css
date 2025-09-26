@@ -1,0 +1,1087 @@
+/* --- CSS Variables for Theme Management --- */
+:root {
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Lato', sans-serif;
+    --primary-color: #E74C3C; /* Cinnabar Red - Passionate, Appetizing */
+    --secondary-color: #F4DDB4; /* Dutch White - Warm, Creamy */
+    --text-color: #36454F; /* Charcoal - Strong, Stable */
+    --light-text-color: #FDFEFE; /* Almost White */
+    --gold-accent: #FFD700; /* Gold - Luxury, Quality */
+    --header-bg: rgba(23, 23, 23, 0.7); /* Semi-transparent dark background */
+}
+
+/* --- General Reset & Body Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Navigation --- */
+.header {
+    background: var(--header-bg);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    color: var(--light-text-color);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    color: var(--gold-accent);
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
+.logo .tagline {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    font-weight: normal;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Mesmerizing hover effect for nav links */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--gold-accent);
+    transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold-accent);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text-color);
+    background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+    margin-top: 0; /* Removed margin as header is fixed */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.hero-content {
+    position: relative; /* To sit on top of the overlay */
+    z-index: 10;
+}
+
+.hero-content h2 {
+    font-family: var(--font-primary);
+    font-size: clamp(3rem, 10vw, 6rem); /* Responsive font size */
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+ 
+/* --- Buttons --- */
+.btn {
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 50px; /* Modern pill shape */
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #c0392b; /* Darker shade of primary */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--light-text-color);
+    border-color: var(--gold-accent);
+}
+
+.btn-secondary:hover {
+    background-color: var(--gold-accent);
+    color: var(--text-color);
+    transform: translateY(-3px);
+}
+
+/* this is the menu section  */
+ 
+/* --- Mesmerizing Menu Section --- */
+.menu {
+    padding: 6rem 0;
+    position: relative;
+    /* We add a background image to the section for the glass effect to work on */
+    background: url('https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    overflow: hidden; /* Ensures glowing effects don't spill out */
+}
+
+/* Add an overlay to darken the background image and make text pop */
+.menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* We need to make sure the container content sits on top of the overlay */
+.menu .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-title, .section-subtitle {
+    text-align: center;
+    color: var(--light-text-color); /* Text needs to be light on the dark background */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+}
+
+/* The Glass Card Container */
+.menu-category-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.menu-category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* The background element that will be blurred */
+.card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* For Safari */
+    z-index: 1;
+}
+
+/* The content on top of the blurred glass */
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    color: var(--light-text-color);
+}
+
+.card-content h3 {
+    font-family: var(--font-primary);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--gold-accent);
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* The Crystal Hover Effect Item */
+.menu-item {
+    display: flex;
+    align-items: baseline;
+    padding: 0.8rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Crucial for the shine effect */
+    transition: background 0.3s ease;
+}
+
+.menu-item h4 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.separator {
+    flex-grow: 1;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    margin: 0 0.75rem;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--gold-accent);
+}
+
+/* The Crystal Shine Animation */
+.menu-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%; /* Start off-screen */
+    width: 100%;
+    height: 100%;
+    transform: skewX(-25deg);
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transition: left 0.8s ease;
+}
+
+.menu-item:hover::after {
+    left: 150%; /* Animate across the element */
+}
+
+
+
+
+
+/* this is the  About us section of teh page  */
+
+
+
+
+/* --- About Us Section (Dark Theme Revision) --- */
+.about {
+    position: relative;
+    padding: 6rem 0;
+    /* New dark background image that fits the theme */
+    background: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+    overflow: hidden;
+}
+
+/* Dark overlay for readability, consistent with other sections */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 5, 5, 0.6);
+    z-index: 1;
+}
+
+.about .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Reverting section titles to the light color for the dark background */
+.about .section-title,
+.about .section-subtitle {
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.about-content {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* --- NEW: Frosted Glass Effect for the Text --- */
+.about-text {
+    background-color: rgba(255, 255, 255, 0.05); /* Very subtle white tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2.5rem;
+    color: var(--light-text-color);
+}
+
+.about-text h3 {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    color: var(--gold-accent); /* Gold looks more elegant on the dark glass */
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9); /* Slightly softer than pure white */
+    margin-bottom: 1.5rem;
+}
+
+.about-image {
+    position: relative;
+}
+
+/* The decorative frame effect remains the same, but now pops against the dark bg */
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gold-accent);
+    border-radius: 10px;
+    z-index: 1;
+    transition: transform 0.4s ease-in-out;
+}
+
+.image-wrapper {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4); /* Shadow is more effective here */
+    transition: transform 0.4s ease-in-out;
+}
+
+.about-image:hover .image-wrapper {
+    transform: translate(15px, 15px);
+}
+
+.about-image:hover::before {
+    transform: translate(-15px, -15px);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .about-image {
+        order: -1; 
+    }
+}
+
+
+/* this is the contact section of the web page  */
+
+
+/* --- Contact Section --- */
+.contact {
+    position: relative;
+    padding: 6rem 0;
+    /* A final, new background image to keep it fresh but thematic */
+    background: url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=2070&auto-format&fit=crop') no-repeat center center/cover;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 5, 5, 0.7); /* Slightly darker overlay for focus */
+    z-index: 1;
+}
+
+.contact .container {
+    position: relative;
+    z-index: 2;
+}
+
+.contact .section-title,
+.contact .section-subtitle {
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.contact-content {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Info column is smaller than form */
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+/* Glass panel styling for both info and form */
+.contact-info, .contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2.5rem;
+    color: var(--light-text-color);
+}
+
+.contact-info h3, .contact-form h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--gold-accent);
+    margin-bottom: 2rem;
+}
+
+.contact-info .hours-title {
+    margin-top: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    color: var(--gold-accent);
+    width: 20px; /* Aligns the text nicely */
+    text-align: center;
+}
+
+/* Form Specifics */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: var(--light-text-color);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1rem; /* A bit larger for emphasis */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* this is the Reservation section of the page  */
+
+
+
+/* --- Reservation Section --- */
+.reservation {
+    position: relative;
+    padding: 6rem 0;
+    background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+}
+
+.reservation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.reservation .container {
+    position: relative;
+    z-index: 2;
+}
+
+.reservation .section-title,
+.reservation .section-subtitle {
+    color: var(--light-text-color);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* The main glass panel for the form */
+.reservation-form {
+    max-width: 700px; /* Optimal width for a form */
+    margin: 4rem auto 0; /* Centering the form */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 3rem;
+}
+
+/* Styling for side-by-side fields */
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-row .form-group {
+    width: 100%; /* Each group takes half the space */
+}
+
+.reservation-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Consistent input styling with the contact form */
+.reservation-form input,
+.reservation-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: var(--light-text-color);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservation-form input::placeholder,
+.reservation-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.reservation-form input:focus,
+.reservation-form textarea:focus {
+    outline: none;
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Specific styling for date/time inputs and their labels */
+.reservation-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Fix for dark background on date/time picker icon in some browsers */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.8);
+}
+
+.reservation-form button {
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Responsive adjustments for the form row */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column; /* Stack date/time on small screens */
+        gap: 1.5rem; /* Keep the gap consistent */
+    }
+    .reservation-form {
+        padding: 2rem; /* Reduce padding on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .reservation-form {
+        padding: 1.5rem; /* Further reduce padding */
+    }
+    
+}
+
+/* ============================================= */
+/* === SCROLL-BASED ANIMATIONS & KEYFRAMES === */
+/* ============================================= */
+
+/* --- Keyframe Definitions --- */
+
+/* Fades and slides an element up from the bottom */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fades and slides an element in from the left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fades and slides an element in from the right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* --- Animation Utility Classes --- */
+
+/* The initial state for any element we want to animate on scroll */
+/* It starts as invisible and will be made visible by JavaScript */
+.animate-on-scroll {
+  opacity: 0;
+  /* This prevents a "flash" of un-animated content before JS loads */
+}
+
+/* This class will be added by JavaScript when the element is in view.
+  It triggers the animation.
+*/
+.is-visible {
+  animation-duration: 4.5s; /* How long the animation takes */
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* A smooth easing */
+  animation-fill-mode: forwards; /* Keeps the element visible after animating */
+}
+
+/* Assigning specific keyframes to classes */
+.is-visible.fade-in-up {
+  animation-name: fadeInUp;
+}
+
+.is-visible.slide-in-left {
+  animation-name: slideInLeft;
+}
+
+.is-visible.slide-in-right {
+  animation-name: slideInRight;
+}
+
+/* === FOOTER STYLES START HERE === */
+/* =================================== */
+
+/* --- Keyframe for the mesmerizing pulse effect --- */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+  }
+}
+
+.footer {
+    position: relative;
+    padding-top: 5rem;
+    color: var(--light-text-color);
+    background: url('https://images.unsplash.com/photo-1549194388-2469d79937b5?q=80&w=1964&auto=format&fit=crop') no-repeat center center/cover;
+    overflow: hidden;
+}
+
+/* Glass effect overlay */
+.footer-bg-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 5, 5, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.footer .container {
+    position: relative;
+    z-index: 2;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding-bottom: 3rem;
+}
+
+.footer-column .logo-font {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    color: var(--gold-accent);
+    margin-bottom: 1rem;
+}
+
+.footer-column h4 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--light-text-color);
+}
+
+.footer-column p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-column ul a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-column ul a:hover {
+    color: var(--gold-accent);
+    padding-left: 5px;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--light-text-color);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* Stagger the animation for a more dynamic feel */
+.social-links a:nth-child(2) { animation-delay: 0.3s; }
+.social-links a:nth-child(3) { animation-delay: 0.6s; }
+ .social-links a:nth-child(4) { animation-delay: 0.9s; } 
+
+.social-links a:hover {
+    background-color: var(--gold-accent);
+    color: var(--text-color);
+    transform: translateY(-5px);
+    animation-play-state: paused; /* Pause the glow on hover */
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.back-to-top:hover {
+    background-color: #c0392b;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================= */
+/* === RESPONSIVE MEDIA QUERIES START HERE === */
+/* ============================================= */
+
+/* Initial setup for mobile navigation (hidden on desktop) */
+.nav-toggle,
+.nav-toggle-label {
+    display: none;
+}
+
+/* --- For Tablets and smaller laptops (up to 1024px) --- */
+@media (max-width: 1024px) {
+    .about-content, .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    .about-text, .contact-info, .contact-form, .reservation-form {
+        padding: 2rem;
+    }
+}
+
+/* --- For Tablets and most mobile phones (up to 768px) --- */
+@media (max-width: 768px) {
+    /* MOBILE NAVIGATION */
+    .nav-toggle-label {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        height: 30px;
+        width: 35px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: white;
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+        position: absolute;
+        transition: transform 0.3s ease, top 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+    }
+
+    .nav-toggle-label span::before { top: -10px; }
+    .nav-toggle-label span::after { top: 10px; }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--header-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 1rem 0;
+        display: block;
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+        max-height: 500px;
+        padding: 1rem 0;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span { transform: rotate(45deg); }
+    .nav-toggle:checked ~ .nav-toggle-label span::before { top: 0; transform: rotate(90deg); opacity: 0;}
+    .nav-toggle:checked ~ .nav-toggle-label span::after { top: 0; transform: rotate(90deg); }
+
+    /* GENERAL STYLING ADJUSTMENTS */
+    .section-title { font-size: 2.5rem; }
+    .hero-content h2 { font-size: clamp(2.5rem, 12vw, 4rem); }
+    .hero-content p { font-size: 1.1rem; }
+    .about-content, .contact-content { margin-top: 3rem; }
+}
+
+/* --- For smaller mobile phones (up to 600px) --- */
+@media (max-width: 600px) {
+    body { font-size: 15px; }
+    .container { padding: 0 15px; }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 80%;
+        max-width: 300px;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
