@@ -78,13 +78,13 @@ This is a static front-end project. No complex build steps are required.
 
 ---
 
-## 📸 Screenshots
+## 📸 Previews 
 
 **Desktop View**
-![Desktop View](/Assets/Desktop-View.gif)
+[Desktop View](/Assets/Desktop-View.gif)
 
 **Mobile View**
-![Mobile view](/Assets/Mobile-View.gif)
+[Mobile view](/Assets/Mobile-View.gif)
 
 ---
 
